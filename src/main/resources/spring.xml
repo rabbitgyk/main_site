@@ -22,46 +22,18 @@
     <context:component-scan base-package="com.rabbit.site"></context:component-scan>
     <!-- 处理所有的异常 -->
     <bean id="simpleMappingExceptionResolver" class="com.rabbit.site.exceptionHandler.ShareHandlerExceptionResolver" />
-    <!-- 测试开发环境数据源
-    <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
-    	<property name="driver" value= "oracle.jdbc.driver.OracleDriver" />
-		<property name="driverUrl" value="jdbc:oracle:thin:@192.168.8.84:1521:cifdb" />
-		<property name="user" value="wsusr" />
-		<property name="password" value="wsusr" />
-		<property name="maximumActiveTime" value="300000" />
-		<property name="prototypeCount" value="0" />
-		<property name="maximumConnectionCount" value="50" />
-		<property name="minimumConnectionCount" value="2" />
-		<property name="simultaneousBuildThrottle" value="50" />
-		<property name="houseKeepingTestSql" value="select 1 from dual" />
-    </bean> -->
-    
-    <!-- 生产环境的数据源
-    <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
-    	<property name="driver" value= "oracle.jdbc.driver.OracleDriver" />
-		<property name="driverUrl" value="jdbc:oracle:thin:@(DESCRIPTION =
-		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.31.89)(PORT = 1521))
-		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.31.90)(PORT = 1521))
-		(LOAD_BALANCE = OFF)(FAILOVER=ON)
-		(CONNECT_DATA =
-			(SERVER = DEDICATED)
-			(SERVICE_NAME = zfoms)
-			(FAILOVER_MODE=(TYPE = SELECT)(METHOD = BASIC)(RETIRES = 20)(DELAY = 15))
-		))" />
-		<property name="user" value="wsusr" />
-		<property name="password" value="ws0519##usr" />
-		<property name="maximumActiveTime" value="300000" />
-		<property name="prototypeCount" value="0" />
-		<property name="maximumConnectionCount" value="50" />
-		<property name="minimumConnectionCount" value="2" />
-		<property name="simultaneousBuildThrottle" value="50" />
-		<property name="houseKeepingTestSql" value="select 1 from dual" />
-    </bean>  -->
-    
-    <!--1:配置一个JdbcTemplate实例，并将这个“共享的”，“安全的”实例注入到不同的DAO类中去  
+    <!-- 测试开发环境数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	    <property name="url" value="jdbc:mysql://localhost:3306/jingjing" />
+	    <property name="username" value="root" />
+	    <property name="password" value="12120415" />
+	</bean>
+
+    <!--1:配置一个JdbcTemplate实例，并将这个“共享的”，“安全的”实例注入到不同的DAO类中去  -->
     <bean id = "jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">   
         <property name = "dataSource" ref="dataSource"/>   
-    </bean>-->
+    </bean>
     
     <!-- spring 连接 redis 的数据源配置
 	<bean id="jedisConnectionFactory"
