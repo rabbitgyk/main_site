@@ -20,8 +20,10 @@
 	
 	<!-- 设置使用注解的类所在的src包 上面一句context:annotation-config可以去掉 -->
     <context:component-scan base-package="com.rabbit.site"></context:component-scan>
+    
     <!-- 处理所有的异常 -->
     <bean id="simpleMappingExceptionResolver" class="com.rabbit.site.exceptionHandler.ShareHandlerExceptionResolver" />
+    
     <!-- 测试开发环境数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
