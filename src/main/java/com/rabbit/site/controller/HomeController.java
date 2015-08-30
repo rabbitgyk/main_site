@@ -17,19 +17,13 @@ import com.rabbit.site.annotation.LoginRequired;
  */
 @Controller
 @RequestMapping("/home")
-@LoginRequired
+//@LoginRequired
 public class HomeController {
 
 	@RequestMapping("/page")
 	public String helloWorld(HttpServletRequest request){
 		request.setAttribute("username", "rabbit-guoyankui");
 		return "/home";
-	}
-	
-	@RequestMapping("/jingjing")
-	public String jingjing(HttpServletRequest request){
-		request.setAttribute("label", "jingjing");
-		return "/jsp/jingjing";
 	}
 	
 	@RequestMapping(value = "/info", method = {RequestMethod.POST})

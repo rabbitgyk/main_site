@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>兔爷 公告</title>
-<script type="text/javascript" src="<%=basePath %>/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="<%=basePath %>/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 function info(){
 	//alert("login click");
