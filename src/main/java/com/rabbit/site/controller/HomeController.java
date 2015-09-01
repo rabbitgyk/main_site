@@ -17,7 +17,7 @@ import com.rabbit.site.annotation.LoginRequired;
  */
 @Controller
 @RequestMapping("/home")
-//@LoginRequired
+@LoginRequired
 public class HomeController {
 
 	@RequestMapping("/page")

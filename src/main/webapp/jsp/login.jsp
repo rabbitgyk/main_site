@@ -7,6 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>登录</title>
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="<%=basePath %>/bootstrap-3.3.5/css/bootstrap.min.css">
@@ -24,6 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 function login(){
 	//alert("login click");
 	var loginIndivForm = $('#loginIndivForm');
+	loginIndivForm
 	$.ajax({
 	    cache: true,
 	    type: "POST",
@@ -49,26 +51,20 @@ function login(){
 
 </head>
 <body>
-	<h3>${label}</h3>
-	<form id="loginIndivForm" action="${refer}" method="post">
-	<label>用户名：</label><input name="userName"></input>
-	<label>密 码：</label><input name="password"></input>
-	<input type="button" value="登录" id="btn" onclick="login()" />
-	</form>
 	<div class="container">
-
-      <form class="form-signin">
+	
+      <form class="form-signin" id="loginIndivForm" action="${refer}" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" id="inputEmail" name="userName" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="login()">Sign in</button>
       </form>
 
     </div> <!-- /container -->
