@@ -7,5 +7,7 @@ package com.rabbit.site.service;
 public interface UserLoginService {
 	
 	public String getSalt(String userName);
+	
+	public void add(String user);
 
 }
