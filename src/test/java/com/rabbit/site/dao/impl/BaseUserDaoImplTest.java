@@ -2,11 +2,15 @@ package com.rabbit.site.dao.impl;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import com.rabbit.site.base.ApplicationContextHelper;
 import com.rabbit.site.dao.BaseUserDao;
+import com.rabbit.site.model.BaseUser;
 
 /**
  *
@@ -27,6 +31,36 @@ public class BaseUserDaoImplTest {
 	public void findUserName() {
 		String userName = baseUserDao.findUserName(1);
 		assertEquals("rabbit", userName);
+	}
+	
+	@Test
+	public void insertUser() {
+		BaseUser bu = new BaseUser();
+		bu.setUserName("insertTest");
+		bu.setPassword("38834993002032488");
+		bu.setSalt("djueru38");
+		bu.setExtra("hehhe");
+		baseUserDao.insertUser(bu);
+	}
+	
+	@Test
+	public void batchInsert(){
+		List<BaseUser> list = new ArrayList<BaseUser>();
+		for(int i=0; i<10000; i++){
+			BaseUser bu = new BaseUser();
+			bu.setUserName("batchUser"+i);
+			bu.setPassword("38834993002032488");
+			bu.setSalt("djueru38");
+			bu.setExtra("hehhe");
+			list.add(bu);
+		}
+		baseUserDao.batchInsert(list);
+	}
+	
+	@Test
+	public void getTops(){
+		List<BaseUser> list = baseUserDao.getTops(1000);
+		System.out.println(list.size());
 	}
 
 }

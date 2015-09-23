@@ -1,49 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-%>
-<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>兔爷 首页</title>
-
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="<%=basePath %>/bootstrap-3.3.5/css/bootstrap.min.css">
-<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-<link rel="stylesheet" href="<%=basePath %>/bootstrap-3.3.5/css/bootstrap-theme.min.css">
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="<%=basePath %>/js/jquery-1.11.3.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="<%=basePath %>/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="<%=basePath %>/css/home.css">
-
+<jsp:include page="./inc/header.jsp"></jsp:include>
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
-
+	<jsp:include page="./inc/navbar.jsp"></jsp:include>
+	
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
@@ -106,11 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
+      <jsp:include page="./inc/footer.jsp"></jsp:include>
 
     </div><!--/.container-->
 </body>
