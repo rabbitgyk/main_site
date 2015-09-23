@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>兔爷 首页</title>
-<jsp:include page="./inc/header.jsp"></jsp:include>
+<title>首页</title>
+<jsp:include page="../inc/header.jsp"></jsp:include>
 <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-	<jsp:include page="./inc/navbar.jsp"></jsp:include>
+	<jsp:include page="../inc/navbar.jsp"></jsp:include>
 	
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
-
         <div class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
@@ -19,6 +19,7 @@
           <div class="jumbotron">
             <h1>Hello, world!</h1>
             <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
           </div>
           <div class="row">
             <div class="col-xs-6 col-lg-4">
@@ -70,7 +71,7 @@
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
 
-      <jsp:include page="./inc/footer.jsp"></jsp:include>
+      <jsp:include page="../inc/footer.jsp"></jsp:include>
 
     </div><!--/.container-->
 </body>

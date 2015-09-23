@@ -19,7 +19,7 @@ public class JingJingController {
 	@RequestMapping("/page")
 	public String jingjing(HttpServletRequest request){
 		request.setAttribute("label", "jingjing");
-		return "/jsp/jingjing";
+		return "/view/jingjing";
 	}
 	
 	

@@ -29,7 +29,7 @@ public class LoginController {
 		HashMap<String, Object> model = new HashMap<String, Object>();
 		model.put("label", "test 登录");
 		model.put("refer", request.getParameter("f"));
-		return new ModelAndView("/jsp/login", model);
+		return new ModelAndView("/view/login", model);
 	}
 	
 	@RequestMapping(value = "/post", method = { RequestMethod.POST })

@@ -32,7 +32,7 @@ public class PublicController {
 	@RequestMapping("/page")
 	public String helloWorld(HttpServletRequest request){
 		request.setAttribute("username", "rabbit-guoyankui");
-		return "/public";
+		return "/view/public";
 	}
 	
 	@RequestMapping(value="/params", method=RequestMethod.GET, params="myParam=myValue")

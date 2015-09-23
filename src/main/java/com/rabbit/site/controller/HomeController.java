@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping("/page")
 	public String helloWorld(HttpServletRequest request){
 		request.setAttribute("username", "rabbit-guoyankui");
-		return "/home";
+		return "/view/home";
 	}
 	
 	@RequestMapping(value = "/info", method = {RequestMethod.POST})
