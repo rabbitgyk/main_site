@@ -22,8 +22,9 @@ public class UserLoginServiceImplTest {
 	}
 
 	@Test
-	public void test() {
-		userLoginService.add("123");
+	public void testUserLogin() {
+		
+		userLoginService.login("guoyankui1", "123456");
 	}
 
 }

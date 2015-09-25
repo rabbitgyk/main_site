@@ -14,4 +14,7 @@ select 1 from dual;
 
 CREATE TABLE baseuser (userId int NOT NULL AUTO_INCREMENT, userName varchar(50), password char(32), extra varchar(100), salt char(8), PRIMARY KEY (userId)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+----设置自增长的起始值
+alter table baseuser AUTO_INCREMENT=10000;
+
 INSERT INTO baseuser (userId, userName, password, extra, salt) VALUES (0, '', '', '', '');

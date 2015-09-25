@@ -13,6 +13,10 @@ public interface BaseUserDao {
 	
 	public String findUserName(int id);
 	
+	public String findSalt(String userName);
+	
+	public String findPassword(String userName);
+	
 	public int insertUser(BaseUser baseUser);
 	
 	public int[] batchInsert(final List<BaseUser> list);

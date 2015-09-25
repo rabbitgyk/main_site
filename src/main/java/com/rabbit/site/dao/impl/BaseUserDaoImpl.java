@@ -30,6 +30,20 @@ public class BaseUserDaoImpl implements BaseUserDao {
 		Object[] params = {id};
 		return jdbcTemplate.queryForObject(sql, params, String.class);
 	}
+	
+	@Override
+	public String findSalt(String userName) {
+		String sql = "select salt from baseuser where userName=?";
+		Object[] params = {userName};
+		return jdbcTemplate.queryForObject(sql, params, String.class);
+	}
+	
+	@Override
+	public String findPassword(String userName) {
+		String sql = "select password from baseuser where userName=?";
+		Object[] params = {userName};
+		return jdbcTemplate.queryForObject(sql, params, String.class);
+	}
 
 	@Override
 	public int insertUser(BaseUser baseUser) {
@@ -72,6 +86,7 @@ public class BaseUserDaoImpl implements BaseUserDao {
             return baseUser;
 		}
 	}
-	
+
+
 
 }

@@ -6,8 +6,7 @@ package com.rabbit.site.service;
  */
 public interface UserLoginService {
 	
-	public String getSalt(String userName);
+	public int login(String userName, String password);
 	
-	public void add(String user);
 
 }
