@@ -1,4 +1,7 @@
 package com.rabbit.site.model;
+
+import com.alibaba.fastjson.JSONObject;
+
 /**
  *
  * @author rabbit
@@ -41,5 +44,12 @@ public class BaseUser {
 	public void setExtra(String extra) {
 		this.extra = extra;
 	}
+	
+	@Override
+	public String toString() {
+		return JSONObject.toJSONString(this);
+	}
+	
+	
 
 }

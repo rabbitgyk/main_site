@@ -12,4 +12,6 @@ import com.rabbit.site.model.BaseUser;
 public interface BaseUserService {
 
 	public List<BaseUser> getTops(int amount);
+	
+	public void add(BaseUser baseUser);
 }

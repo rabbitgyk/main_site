@@ -27,4 +27,9 @@ public class BaseUserServiceImpl implements BaseUserService {
 		return baseUserDao.getTops(amount);
 	}
 
+	@Override
+	public void add(BaseUser baseUser) {
+		baseUserDao.insertUser(baseUser);
+	}
+
 }
