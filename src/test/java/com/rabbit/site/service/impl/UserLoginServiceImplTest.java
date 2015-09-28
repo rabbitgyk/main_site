@@ -25,6 +25,7 @@ public class UserLoginServiceImplTest {
 	public void testUserLogin() {
 		
 		userLoginService.login("guoyankui1", "123456");
+//		userLoginService.logTest("333333333");
 	}
 
 }

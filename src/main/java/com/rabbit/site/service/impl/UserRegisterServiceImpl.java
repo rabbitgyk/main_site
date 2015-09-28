@@ -24,7 +24,7 @@ public class UserRegisterServiceImpl implements UserRegisterService {
 	private BaseUserDao baseUserDao;
 	
 	@Override
-	public int register(String userName, String password, String password2) {
+	public Integer register(String userName, String password, String password2) {
 		//二次确认密码
 		if(!password.equals(password2)){
 			log.info("确认密码不正确！");

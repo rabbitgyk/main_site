@@ -22,7 +22,7 @@ public class UserLoginServiceImpl implements UserLoginService {
 	private BaseUserDao baseUserDao;
 	
 	@Override
-	public int login(String userName, String password) {
+	public Integer login(String userName, String password) {
 		String salt = baseUserDao.findSalt(userName);
 		String basePassword =baseUserDao.findPassword(userName);
 		if(!validatePassword(basePassword, password, salt)){

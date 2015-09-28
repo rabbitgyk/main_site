@@ -6,5 +6,5 @@ package com.rabbit.site.service;
  */
 public interface UserRegisterService {
 
-	public int register(String userName, String password, String password2);
+	public Integer register(String userName, String password, String password2);
 }
