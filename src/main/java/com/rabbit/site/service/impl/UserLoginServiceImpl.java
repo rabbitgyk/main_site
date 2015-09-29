@@ -24,7 +24,7 @@ public class UserLoginServiceImpl implements UserLoginService {
 	@Override
 	public Integer login(String userName, String password) {
 		String salt = baseUserDao.findSalt(userName);
-		String basePassword =baseUserDao.findPassword(userName);
+		String basePassword = baseUserDao.findPassword(userName);
 		if(!validatePassword(basePassword, password, salt)){
 			log.info("您输入的密码不正确！");
 			return HandleStatus.FAIL;

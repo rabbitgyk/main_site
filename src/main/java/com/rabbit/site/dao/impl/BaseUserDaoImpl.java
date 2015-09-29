@@ -66,6 +66,13 @@ public class BaseUserDaoImpl implements BaseUserDao {
 		Object[] params = {amount};
 		return jdbcTemplate.query(sql, params, new BaseUserRowMapper());
 	}
+	
+	@Override
+	public Integer countUser(String userName) {
+		String sql = "select count(1) from baseuser where userName=?";
+		Object[] params = {userName};
+		return jdbcTemplate.queryForObject(sql, params, Integer.class);
+	}
 
 	
 	/**

@@ -25,6 +25,11 @@ public class UserRegisterServiceImpl implements UserRegisterService {
 	
 	@Override
 	public Integer register(String userName, String password, String password2) {
+		//用户是否已经被注册
+		if(baseUserDao.countUser(userName) > 0){
+			log.info("该用户名已经被注册了！" + userName);
+			return HandleStatus.FAIL;
+		}
 		//二次确认密码
 		if(!password.equals(password2)){
 			log.info("确认密码不正确！");

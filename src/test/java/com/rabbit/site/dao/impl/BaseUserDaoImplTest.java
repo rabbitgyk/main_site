@@ -61,5 +61,10 @@ public class BaseUserDaoImplTest {
 		List<BaseUser> list = baseUserDao.getTops(1000);
 		System.out.println(list.size());
 	}
+	
+	@Test
+	public void countUser(){
+		System.out.println(baseUserDao.countUser("guoyankui1"));
+	}
 
 }

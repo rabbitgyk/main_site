@@ -23,6 +23,8 @@ public interface BaseUserDao {
 	
 	public List<BaseUser> getTops(int amount);
 	
+	public Integer countUser(String userName);
+	
 	
 
 }
